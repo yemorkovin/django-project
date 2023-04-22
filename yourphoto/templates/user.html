@@ -1,0 +1,53 @@
+{% extends "main.html" %} {% block title %}
+<title>YourPhotos</title>
+<style>
+  #photo_list {
+    margin-left: 10px;
+    padding-bottom: 30px;
+    width: 30%;
+    overflow: hidden;
+    float: left;
+  }
+  ul{
+  list-style: none;
+  }
+  .clear {
+    clear: both;
+  }
+</style>
+{% endblock %} {% block content %}
+<div id="container">
+  <table border="1" width="100%">
+    {% load static %}
+    <br />
+    {% for photo in photo_profile %}
+    <img src="{{photo.photo_profile}}" width="300px"/>
+
+    {% endfor %}
+    <ul>
+      {% for us in user %}
+      <li><b>Имя: </b>{{ us.full_name }}</li>
+      <li><b>Город: </b>{{ us.city }}</li>
+      <li><b>Телефон: </b>{{ us.tel }}</li>
+      <li><b>Email: </b>{{us.email }}</li>
+      {% endfor %}
+    </ul>
+    
+  </table><br />
+  <h2 align="center">Портфолио: </h2>
+  {% for photo in images %}
+  <div id="photo_list">
+    <img src="{{ photo.photo }}" width="200" />
+    <br />
+    {{ photo.full_name }}
+    <br />
+    <a href="/delete/?id={{ photo.id }}"> Delete </a>
+  </div>
+  {% endfor %}
+  <div class="clear"></div>
+</div>
+
+
+{% endblock %} {% block exit %} {% if login %}
+<a href="exit/">exit</a>
+{% endif %} {% endblock %}

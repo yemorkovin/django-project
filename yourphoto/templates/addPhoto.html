@@ -1,0 +1,55 @@
+{% extends "main.html" %} {% block title %}
+<title>YourPhoto</title>
+<style>
+  #photo_list {
+    margin-left: 10px;
+    padding-bottom: 30px;
+    width: 30%;
+    overflow: hidden;
+    float: left;
+  }
+  .clear {
+    clear: both;
+  }
+</style>
+{% endblock %} {% block content %}
+
+<div id="container_reg">
+  <h1>Фотогалерея</h1>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %} Заголовок <input type="text" name="title" />
+    <br />
+    Выбрать файл
+    <input type="file" name="file" accept="image/png, image/gif, image/jpeg" />
+    <br />
+    <button type="submit">Добавить фото</button>
+  </form>
+  {% for photo in photos %}
+  <div id="photo_list">
+    <img src="{{ photo.photo }}" width="200" />
+    <br />
+    {{ photo.full_name }}
+    <br />
+    <a href="/delete/?id={{ photo.id }}"> Delete </a>
+  </div>
+  {% endfor %}
+  <div class="clear"></div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <br />
+  <br />
+</div>
+{% endblock %}

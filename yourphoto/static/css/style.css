@@ -1,0 +1,102 @@
+body {
+  background-color: rgb(178, 178, 178);
+}
+#main {
+  width: 900px;
+  margin: 20px auto;
+  background-color: rgb(238, 238, 238);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.4), 0 28px 30px rgba(0, 0, 0, 0.3);
+}
+
+header {
+  background-color: #e8e8e8;
+  height: 150px;
+  overflow: hidden;
+}
+#nav_main {
+  float: right;
+  padding-right: 100px;
+  margin-top: 100px;
+}
+
+#nav_main a {
+  color: #3c59da;
+  text-decoration: none;
+}
+#nav_main a:hover {
+  color: rgb(211, 211, 48);
+  background: #e8e8e8;
+}
+#nav_main li {
+  display: inline;
+  padding: 15px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#container {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#banner {
+  float: right;
+  margin-right: 30px;
+  margin-top: 25px;
+}
+
+#container p {
+  margin-left: 50px;
+}
+
+#clear {
+  clear: both;
+}
+
+footer {
+  text-align: center;
+}
+
+#banner_contacts {
+  float: none;
+}
+
+#container_contacts {
+  text-align: center;
+}
+
+#main_text {
+  width: 400px;
+  height: 300px;
+  padding-right: 50px;
+  margin-left: 50px;
+  margin-right: 0px;
+  line-height: 40px;
+  font-family: "Courier New", Courier, monospace;
+  float: left;
+}
+
+footer {
+  background-color: #e8e8e8;
+  height: 150px;
+}
+
+#container_auto {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin-top: 75px;
+}
+
+#container_auto a:hover {
+  color: rgb(211, 211, 48);
+  background: #e8e8e8;
+}
+
+#container_reg {
+  margin-top: 15px;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}

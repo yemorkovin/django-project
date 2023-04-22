@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block title %}
+    <title> </title>
+    {% endblock %} {% load static %}
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/favicon.png' %}"
+      type="image/png"
+    />
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div id="main">
+      <header>
+        <a href="/">
+          <img src="{% static 'images/logo.webp' %}" alt="Not photo" />
+        </a>
+        <ul id="nav_main">
+          <li>
+            <a href="/filter/">photographer search</a>
+          </li>
+          {% if not login %}
+          <li>
+            <a href="/auto/">log in</a>
+          </li>
+
+          <li>
+            <a href="/registration/">registration</a>
+          </li>
+          {% endif %} {% if login %}
+          <li>
+            <a href="/add_photo/"> Gallery </a>
+          </li>
+          <li>
+            <a href="/panel/"> Profile </a>
+          </li>
+          {% endif %}
+          <li>
+            <a href="/contacts/"> contacts </a>
+          </li>
+        </ul>
+      </header>
+      {% block content %} {% endblock %}
+
+      <footer>
+        <br />
+        {% if login %} <a href="/exit/">exit</a>
+        {% endif%}
+        <br />
+        {% block exit %} {% endblock %}
+        <br />
+        <p>All rights reserved. 2022. Email: yourphoto@gmail.com</p>
+      </footer>
+    </div>
+  </body>
+</html>

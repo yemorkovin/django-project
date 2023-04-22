@@ -1,0 +1,76 @@
+{% extends "main.html" %} {% block title %}
+<title>YourPhoto</title>
+{% endblock %} {% block content %}
+
+<div id="container_reg">
+  {% for img in images %}
+<img src="{{img.photo_profile}}" />
+
+  {% endfor %}
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="file" accept="image/png, image/gif, image/jpeg" />
+    <br />
+    <br />
+    Status {{user_id}}<br />
+    {{ form.status }} <br />
+    <br />
+    <br />
+    Full name <br />
+    {{ form.full_name }} <br />
+    <br />
+    Phone <br />{{ form.phone }} <br />
+    <br />
+    <br />
+    City <br />{{ form.city }} <br />
+    <br />
+    Email <br />{{ form.email }} <br />
+    <br />
+    Login <br />{{ form.login }} <br />
+    <br />
+    Password <br />{{ form.password}} <br />
+    <br />
+    <input type="submit" value="Update" />
+  </form>
+  {% for user in users %}
+  <script>
+    let data = document.querySelectorAll('input[name="status"]');
+    if (data[0].value == "{{ user.status }}") {
+      data[0].checked = true;
+    } else {
+      data[1].checked = true;
+    }
+    let full_name = document.querySelector("#full_name");
+    let phone = document.querySelector("#phone");
+    let city = document.querySelector("#city");
+    let email = document.querySelector("#email");
+    let login = document.querySelector("#login");
+    let password = document.querySelector("#password");
+    full_name.value = "{{user.full_name}}";
+    email.value = "{{user.email}}";
+    phone.value = "{{user.tel}}";
+    city.value = "{{user.city}}";
+    login.value = "{{user.login}}";
+    password.value = "{{user.password}}";
+  </script>
+  {% endfor %}
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <br />
+  <br />
+</div>
+{% endblock %}

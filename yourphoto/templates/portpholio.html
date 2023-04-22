@@ -1,0 +1,15 @@
+{% extends "main.html" %} {% block title %}
+<title>YourPhotos</title>
+{% endblock %} {% block content %}
+<div id="container">
+  <table border="1" width="100%">
+    {% for image in images %}
+    <img width="300px" src="../../{{ image.photo }}" />
+    <br />{{ image.full_name }} {% endfor %}
+  </table>
+</div>
+
+<div id="clear"></div>
+{% endblock %} {% block exit %} {% if login %}
+<a href="exit/">exit</a>
+{% endif %} {% endblock %}
